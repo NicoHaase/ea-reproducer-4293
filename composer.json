@@ -1,6 +1,6 @@
 {
     "require": {
-        "easycorp/easyadmin-bundle": "^3.2",
+        "easycorp/easyadmin-bundle": "dev-feature/sortable-collection-3645",
         "symfony/flex": "^1.12",
         "symfony/framework-bundle": "*",
         "composer/package-versions-deprecated": "1.11.99.1",
@@ -9,7 +9,7 @@
         "doctrine/orm": "^2.8",
         "symfony/proxy-manager-bridge": "*",
         "symfony/dotenv": "*",
-        "symfony/yaml": "5.2.*"
+        "symfony/yaml": "*"
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -25,13 +25,21 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "5.2.*"
+            "require": "5.3.*"
         }
     },
+
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/NicoHaase/EasyAdminBundle"
+        }
+    ],
+
     "scripts": {
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"

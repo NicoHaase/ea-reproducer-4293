@@ -26,6 +26,7 @@ class SurveyController extends AbstractCrudController
                 ->setFormTypeOption('by_reference', true)
                 ->onlyOnForms()
                 ->allowDelete()
+                ->setSortOrderFieldName('position')
         ];
     }
 }

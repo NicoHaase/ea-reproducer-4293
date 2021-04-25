@@ -31,6 +31,11 @@ class Question
      */
     private array $choices = [];
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private int $position = 0;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -64,5 +69,15 @@ class Question
     public function setChoices(array $choices): void
     {
         $this->choices = $choices;
+    }
+
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    public function setPosition(int $position): void
+    {
+        $this->position = $position;
     }
 }

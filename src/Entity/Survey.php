@@ -28,7 +28,8 @@ class Survey
     private ?string $description;
 
     /**
-     * @ORM\OneToMany(targetEntity="Question", mappedBy="survey", cascade="persist")
+     * @ORM\OneToMany(targetEntity="Question", mappedBy="survey", cascade={"persist"})
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     private iterable $questions;
 
